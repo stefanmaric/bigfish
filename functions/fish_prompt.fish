@@ -1,59 +1,59 @@
-set -g glyph_git_has_stashes "≡"
-set -g glyph_git_has_untracked_files "…"
-set -g glyph_git_is_ahead "⭱" # Alternatives: ⭱⭡↑⤽⤼
-set -g glyph_git_is_behind "⭳" # Alternatives: ⭳⭣↓⤽⤼
-set -g glyph_git_is_diverged "⤭" # Alternatives: ⭿⮁⇅ ⤲⤱⤮⤭
-set -g glyph_git_on_branch "⎇ "
-set -g glyph_git_on_detached "⌀"
-set -g glyph_git_on_tag "⌂"
+set -g glyph_git_has_stashes '≡'
+set -g glyph_git_has_untracked_files '…'
+set -g glyph_git_is_ahead '⭱' # Alternatives: ⭱⭡↑⤽⤼
+set -g glyph_git_is_behind '⭳' # Alternatives: ⭳⭣↓⤽⤼
+set -g glyph_git_is_diverged '⤭' # Alternatives: ⭿⮁⇅ ⤲⤱⤮⤭
+set -g glyph_git_on_branch '⎇ '
+set -g glyph_git_on_detached '⌀'
+set -g glyph_git_on_tag '⌂'
 
-set -g glyph_bg_jobs "⚙"
-set -g glyph_input_start "❭" # Alternatives: 〉❭❯❱⟩⟫
-set -g glyph_superpower "⌁" # Alternatives: 🗲⚡⌁ϟ
-set -g glyph_regular_user "•"
-set -g glyph_status_zero "•"
+set -g glyph_bg_jobs '⚙'
+set -g glyph_input_start '❭' # Alternatives: 〉❭❯❱⟩⟫
+set -g glyph_superpower '⌁' # Alternatives: 🗲⚡⌁ϟ
+set -g glyph_regular_user '•'
+set -g glyph_status_zero '•'
 
-set -g glyph_nodejs_logo "⬡" # Alternatives: ⬡⌬⏣
+set -g glyph_nodejs_logo '⬡' # Alternatives: ⬡⌬⏣
 
-set -g glyph_vagrant_logo "🇻" # Alternatives: ᴠ▿▾ⅤⅴṿṾＶ𝐕𝕍𝕧𝘃Ⓥⓥ🅅🅥🆅🇻
+set -g glyph_vagrant_logo '🇻' # Alternatives: ᴠ▿▾ⅤⅴṿṾＶ𝐕𝕍𝕧𝘃Ⓥⓥ🅅🅥🆅🇻
 # Skipping `vagrant status` because it is extremly slow
-# set -g glyph_vagrant_running "↑"
-# set -g glyph_vagrant_poweroff "↓"
-# set -g glyph_vagrant_aborted "✕"
-# set -g glyph_vagrant_saved "⇡"
-# set -g glyph_vagrant_stopping "⇣"
-# set -g glyph_vagrant_unknown "!"
+# set -g glyph_vagrant_running '↑'
+# set -g glyph_vagrant_poweroff '↓'
+# set -g glyph_vagrant_aborted '✕'
+# set -g glyph_vagrant_saved '⇡'
+# set -g glyph_vagrant_stopping '⇣'
+# set -g glyph_vagrant_unknown '!'
 
 
 function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     # Requires to be set before any other set calls
     set -l last_status $status
 
-    set -l leftPrompt ""
-    set -l padding ""
-    set -l rightPrompt ""
-    set -l bottomPrompt ""
+    set -l leftPrompt ''
+    set -l padding ''
+    set -l rightPrompt ''
+    set -l bottomPrompt ''
 
     # Assamble the left prompt
     set leftPrompt (bf_concat_segments $leftPrompt (bf_pwd) blue normal true)
 
     # git
     if git_is_repo
-      set leftPrompt (bf_concat_segments $leftPrompt " ╱ " grey normal)
+      set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
       set leftPrompt (bf_concat_segments $leftPrompt (bf_get_git_status_info) \
           (git_is_dirty; and echo yellow; or echo green) normal)
     end
 
     # node
     if lookup package.json > /dev/null
-        set leftPrompt (bf_concat_segments $leftPrompt " ╱ " grey normal)
+        set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
         set leftPrompt (bf_concat_segments $leftPrompt \
             (node --version | sed "s/v/$glyph_nodejs_logo /") cyan normal)
     end
 
     # vagrant
     if lookup Vagrantfile > /dev/null
-        set leftPrompt (bf_concat_segments $leftPrompt " ╱ " grey normal)
+        set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
         set leftPrompt (bf_concat_segments $leftPrompt $glyph_vagrant_logo purple normal)
     end
 
@@ -62,10 +62,10 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     # Last command duration
     set rightPrompt (bf_concat_segments $rightPrompt \
         (echo $CMD_DURATION | humanize_duration) grey normal true)
-    set rightPrompt (bf_concat_segments $rightPrompt " ╱ " grey normal)
+    set rightPrompt (bf_concat_segments $rightPrompt ' ╱ ' grey normal)
     # When did the last command finish
-    set rightPrompt (bf_concat_segments $rightPrompt (date "+%T") grey normal)
-    set rightPrompt (bf_concat_segments $rightPrompt " ╱ " grey normal)
+    set rightPrompt (bf_concat_segments $rightPrompt (date '+%T') grey normal)
+    set rightPrompt (bf_concat_segments $rightPrompt ' ╱ ' grey normal)
     # Last command's status code
     set rightPrompt (bf_concat_segments $rightPrompt \
         (test 0 = $last_status; and echo $glyph_status_zero; or echo $last_status) \
@@ -74,7 +74,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
 
     # Calculate padding
     set paddding (bf_create_padding \
-        (math $COLUMNS - (bf_remove_color "$leftPrompt$rightPrompt" | string length)))
+        (math $COLUMNS - (bf_remove_color $leftPrompt$rightPrompt | string length)))
 
     # Assamble second line of the prompt
     if test (whoami) = "root"
@@ -88,11 +88,11 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     # Print the prompt
 
     # Print first line of the fish prompt
-    printf "$leftPrompt$paddding$rightPrompt"
+    printf $leftPrompt$paddding$rightPrompt
     # Jump to next line
-    printf "\n"
+    printf \n
     # Print second line of the fish prompt
-    printf "$bottomPrompt"
+    printf $bottomPrompt
 
 end
 
@@ -105,22 +105,18 @@ function bf_get_git_status_info --description 'Get git info text with pglyphs'
       printf $glyph_git_on_branch
     end
 
-    printf " "
-    printf (git_branch_name)
+    printf ' %s' (git_branch_name)
 
     if git_is_stashed
-      printf " "
-      printf $glyph_git_has_stashes
+      printf ' %s' $glyph_git_has_stashes
     end
 
     if git_untracked_files > /dev/null
-      printf " "
-      printf $glyph_git_has_untracked_files
+      printf ' %s' $glyph_git_has_untracked_files
     end
 
     if not git_is_detached_head; and test -n (git_ahead)
-        printf " "
-        printf (git_ahead $glyph_git_is_ahead $glyph_git_is_behind $glyph_git_is_diverged)
+        printf ' %s' (git_ahead $glyph_git_is_ahead $glyph_git_is_behind $glyph_git_is_diverged)
     end
 
 end
@@ -140,7 +136,7 @@ function bf_style_string --argument-names text color bgcolor bold underline --de
         set_color --underline
     end
 
-    printf "$text"
+    printf $text
 
     set_color normal
 end
