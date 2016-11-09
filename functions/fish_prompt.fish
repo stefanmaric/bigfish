@@ -1,3 +1,4 @@
+set -g glyph_git_has_staged_changes '±' # Alternatives: ~+±
 set -g glyph_git_has_stashes '≡'
 set -g glyph_git_has_untracked_files '…' # Alternatives: …☡+±
 set -g glyph_git_is_ahead '⭱' # Alternatives: ⭱⭡↑⤽⤼
@@ -107,16 +108,20 @@ function bf_get_git_status_info --description 'Get git info text with pglyphs'
 
     printf ' %s' (git_branch_name)
 
+    if not git_is_detached_head; and test -n (git_ahead)
+        printf ' %s' (git_ahead $glyph_git_is_ahead $glyph_git_is_behind $glyph_git_is_diverged)
+    end
+
     if git_is_stashed
       printf ' %s' $glyph_git_has_stashes
     end
 
-    if git_untracked_files > /dev/null
-      printf ' %s' $glyph_git_has_untracked_files
+    if git_is_staged
+      printf ' %s' $glyph_git_has_staged_changes
     end
 
-    if not git_is_detached_head; and test -n (git_ahead)
-        printf ' %s' (git_ahead $glyph_git_is_ahead $glyph_git_is_behind $glyph_git_is_diverged)
+    if git_untracked_files > /dev/null
+      printf ' %s' $glyph_git_has_untracked_files
     end
 
 end
