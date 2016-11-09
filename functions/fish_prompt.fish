@@ -1,5 +1,5 @@
 set -g glyph_git_has_stashes '≡'
-set -g glyph_git_has_untracked_files '…'
+set -g glyph_git_has_untracked_files '…' # Alternatives: …☡+±
 set -g glyph_git_is_ahead '⭱' # Alternatives: ⭱⭡↑⤽⤼
 set -g glyph_git_is_behind '⭳' # Alternatives: ⭳⭣↓⤽⤼
 set -g glyph_git_is_diverged '⤭' # Alternatives: ⭿⮁⇅ ⤲⤱⤮⤭
