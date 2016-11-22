@@ -155,5 +155,5 @@ function bf_remove_color --description 'Remove color escape sequences from strin
 end
 
 function bf_pwd --description 'Print the current working directory, shortened a bit'
-    echo $PWD  | sed -e "s|^$HOME|~|" -e 's|\([^/.][^/.][^/.]\)[^/]*/|\1/|g'
+    echo $PWD | sed -e "s|^$HOME|~|" -e 's|\([^/.]\{3\}\)[^/]*/|\1/|g'
 end
