@@ -10,9 +10,9 @@ set -g glyph_git_on_tag '⌂'
 
 set -g glyph_bg_jobs '⚙'
 set -g glyph_input_start '❭' # Alternatives: 〉❭❯❱⟩⟫
-set -g glyph_superpower '⌁' # Alternatives: 🗲⚡⌁ϟ
 set -g glyph_regular_user '•'
 set -g glyph_status_zero '•'
+set -g glyph_superpower '⌁' # Alternatives: 🗲⚡⌁ϟ
 
 set -g glyph_nodejs_logo '⬡' # Alternatives: ⬡⌬⏣
 
