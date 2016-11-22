@@ -107,26 +107,26 @@ function bf_get_git_status_info --description 'Get git info text with pglyphs'
         printf $glyph_git_on_branch
     end
 
-    printf ' %s' (git_branch_name)
+    printf ' %s ' (git_branch_name)
 
     if not git_is_detached_head; and test -n (git_ahead)
-        printf ' %s' (git_ahead $glyph_git_is_ahead $glyph_git_is_behind $glyph_git_is_diverged)
+        printf '%s ' (git_ahead $glyph_git_is_ahead $glyph_git_is_behind $glyph_git_is_diverged)
     end
 
     if git_is_stashed
-        printf ' %s' $glyph_git_has_stashes
+        printf '%s ' $glyph_git_has_stashes
     end
 
     if git_is_staged
-        printf ' %s' $glyph_git_has_staged_changes
+        printf '%s' $glyph_git_has_staged_changes
     end
 
     if git_is_dirty
-        printf ' %s' $glyph_git_is_dirty
+        printf '%s' $glyph_git_is_dirty
     end
 
     if git_untracked_files > /dev/null
-        printf ' %s' $glyph_git_has_untracked_files
+        printf '%s' $glyph_git_has_untracked_files
     end
 
 end
