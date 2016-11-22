@@ -3,7 +3,7 @@ set -g glyph_git_has_stashes '≡'
 set -g glyph_git_has_untracked_files '…' # Alternatives: …☡+±
 set -g glyph_git_is_ahead '⭱' # Alternatives: ⭱⭡↑⤽⤼
 set -g glyph_git_is_behind '⭳' # Alternatives: ⭳⭣↓⤽⤼
-set -g glyph_git_is_diverged '⤭' # Alternatives: ⭿⮁⇅ ⤲⤱⤮⤭
+set -g glyph_git_is_diverged '🔀' # Alternatives: ⭿⮁⇅ ⤲⤱⤮⤭ 🔄🔀
 set -g glyph_git_on_branch '⎇ '
 set -g glyph_git_on_detached '⌀'
 set -g glyph_git_on_tag '⌂'
