@@ -100,11 +100,11 @@ end
 
 function bf_get_git_status_info --description 'Get git info text with pglyphs'
     if git_is_tag
-      printf $glyph_git_on_tag
+        printf $glyph_git_on_tag
     else if git_is_detached_head
-      printf $glyph_git_on_detached
+        printf $glyph_git_on_detached
     else
-      printf $glyph_git_on_branch
+        printf $glyph_git_on_branch
     end
 
     printf ' %s' (git_branch_name)
@@ -114,11 +114,11 @@ function bf_get_git_status_info --description 'Get git info text with pglyphs'
     end
 
     if git_is_stashed
-      printf ' %s' $glyph_git_has_stashes
+        printf ' %s' $glyph_git_has_stashes
     end
 
     if git_is_staged
-      printf ' %s' $glyph_git_has_staged_changes
+        printf ' %s' $glyph_git_has_staged_changes
     end
 
     if git_is_dirty
@@ -126,7 +126,7 @@ function bf_get_git_status_info --description 'Get git info text with pglyphs'
     end
 
     if git_untracked_files > /dev/null
-      printf ' %s' $glyph_git_has_untracked_files
+        printf ' %s' $glyph_git_has_untracked_files
     end
 
 end
