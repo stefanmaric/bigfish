@@ -42,7 +42,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     if git_is_repo
       set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
       set leftPrompt (bf_concat_segments $leftPrompt (bf_get_git_status_info) \
-          (git_is_dirty; and echo yellow; or echo green) normal)
+          (git_is_touched; and echo yellow; or echo green) normal)
     end
 
     # node
