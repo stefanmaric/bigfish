@@ -37,7 +37,15 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     set -l bottomPrompt ''
 
     # Assamble the left prompt
+
+    # Current directory
     set leftPrompt (bf_concat_segments $leftPrompt (bf_pwd) blue normal true)
+
+    # Display gear if there are any background jobs
+    if test (jobs | wc -l) -gt 0
+        set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
+        set leftPrompt (bf_concat_segments $leftPrompt $glyph_bg_jobs magenta normal true)
+    end
 
     # git
     if git_is_repo
