@@ -5,7 +5,7 @@ set -g glyph_git_is_ahead '⭱' # Alternatives: ⭱⭡↑⤽⤼
 set -g glyph_git_is_behind '⭳' # Alternatives: ⭳⭣↓⤽⤼
 set -g glyph_git_is_dirty '*'
 set -g glyph_git_is_diverged '🔀' # Alternatives: ⭿⮁⇅ ⤲⤱⤮⤭ 🔄🔀
-set -g glyph_git_on_branch '⎇ ' # Alternatives: 🜉⎇
+set -g glyph_git_on_branch '🜉' # Alternatives: 🜉⎇
 set -g glyph_git_on_detached '⌀'
 set -g glyph_git_on_tag '⌂'
 
