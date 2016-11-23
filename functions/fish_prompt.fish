@@ -9,7 +9,7 @@ set -g glyph_git_on_branch '⎇ ' # Alternatives: 🜉⎇
 set -g glyph_git_on_detached '⌀'
 set -g glyph_git_on_tag '⌂'
 
-set -g glyph_bg_jobs '⚙'
+set -g glyph_bg_jobs '⚙ ' # Alternatives: ⛭⚙⚒
 set -g glyph_input_start '❭' # Alternatives: 〉❭❯❱⟩⟫
 set -g glyph_regular_user '•'
 set -g glyph_status_zero '•'
