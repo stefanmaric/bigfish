@@ -15,7 +15,7 @@ set -g glyph_regular_user '•'
 set -g glyph_status_zero '•'
 set -g glyph_superpower '⌁' # Alternatives: 🗲⚡⌁ϟ
 
-set -g glyph_nodejs_logo '⬡' # Alternatives: ⬡⌬⏣
+set -g glyph_nodejs_logo '⬡ ' # Alternatives: ⬡⌬⏣
 
 set -g glyph_vagrant_logo '🇻' # Alternatives: ᴠ▿▾ⅤⅴṿṾＶ𝐕𝕍𝕧𝘃Ⓥⓥ🅅🅥🆅🇻
 # Skipping `vagrant status` because it is extremly slow
@@ -50,7 +50,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     if lookup package.json > /dev/null
         set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
         set leftPrompt (bf_concat_segments $leftPrompt \
-            (node --version | sed "s/v/$glyph_nodejs_logo /") cyan normal)
+            (node --version | sed "s/v/$glyph_nodejs_logo/") cyan normal)
     end
 
     # vagrant
