@@ -3,7 +3,7 @@ Bigfish
 
 A long, two-lines fishshell prompt theme.
 
-![bigfish](http://i.imgur.com/RJyllDx.gif)
+![bigfish](https://cloud.githubusercontent.com/assets/1009040/20610008/1448be08-b26a-11e6-9363-820eb279d419.gif)
 
 I was tired of issues with patched fonts like [Powerline](https://github.com/powerline/powerline) so I crafted this prompt that relies on Unicode glyphs only.
 
