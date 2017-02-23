@@ -39,7 +39,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     # Assamble the left prompt
 
     # Current directory
-    set leftPrompt (bf_concat_segments $leftPrompt (bf_pwd) blue normal true)
+    set leftPrompt (bf_concat_segments $leftPrompt (prompt_pwd) blue normal true)
 
     # Display gear if there are any background jobs
     if test (jobs | wc -l) -gt 0
@@ -165,8 +165,4 @@ end
 
 function bf_remove_color --description 'Remove color escape sequences from string'
     printf $argv | perl -pe 's/\x1b.*?[mGKH]//g'
-end
-
-function bf_pwd --description 'Print the current working directory, shortened a bit'
-    echo $PWD | sed -e "s|^$HOME|~|" -e 's|\([^/.]\{3\}\)[^/]*/|\1/|g'
 end
