@@ -36,7 +36,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     set -l rightPrompt ''
     set -l bottomPrompt ''
 
-    # Assamble the left prompt
+    # Assemble the left prompt
 
     # Current directory
     set leftPrompt (bf_concat_segments $leftPrompt (prompt_pwd) blue normal true)
@@ -67,7 +67,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
         set leftPrompt (bf_concat_segments $leftPrompt $glyph_vagrant_logo purple normal)
     end
 
-    # Assamble the right prompt
+    # Assemble the right prompt
 
     # Last command duration
     set rightPrompt (bf_concat_segments $rightPrompt \
@@ -86,7 +86,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     set paddding (bf_create_padding \
         (math $COLUMNS - (bf_remove_color $leftPrompt$rightPrompt | string length)))
 
-    # Assamble second line of the prompt
+    # Assemble second line of the prompt
     if test (whoami) = "root"
         set bottomPrompt (bf_concat_segments $bottomPrompt \
             "$glyph_superpower$glyph_input_start " red normal)
