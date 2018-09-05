@@ -1,31 +1,27 @@
+# git
 set -g glyph_git_has_staged_changes '±' # Alternatives: ~+±
 set -g glyph_git_has_stashes '≡'
 set -g glyph_git_has_untracked_files '…' # Alternatives: …☡+±
-set -g glyph_git_is_ahead '⭱' # Alternatives: ⭱⭡↑⤽⤼
-set -g glyph_git_is_behind '⭳' # Alternatives: ⭳⭣↓⤽⤼
+set -g glyph_git_is_ahead '⭱' # Alternatives: ⭱⭡↑⤽⤼⇡
+set -g glyph_git_is_behind '⭳' # Alternatives: ⭳⭣↓⤽⤼⇣
 set -g glyph_git_is_dirty '*'
-set -g glyph_git_is_diverged '🔀' # Alternatives: ⭿⮁⇅ ⤲⤱⤮⤭ 🔄🔀
-set -g glyph_git_on_branch '🜉' # Alternatives: 🜉⎇
+set -g glyph_git_is_diverged '⭿' # Alternatives: ⭿⮁⇅ ⇕⬍ ⤲⤱⤮⤭ 🔄🔀
+set -g glyph_git_on_branch '⎇ ' # Alternatives: 🜉⎇
 set -g glyph_git_on_detached '⌀'
-set -g glyph_git_on_tag '⌂'
+set -g glyph_git_on_tag '⌂' # Alternatives 🏷⌂
 
+# system
 set -g glyph_bg_jobs '⚙ ' # Alternatives: ⛭⚙⚒
 set -g glyph_input_start '❭' # Alternatives: 〉❭❯❱⟩⟫
 set -g glyph_regular_user '•'
 set -g glyph_status_zero '•'
 set -g glyph_superpower '⌁' # Alternatives: 🗲⚡⌁ϟ
 
-set -g glyph_nodejs_logo '⬡ ' # Alternatives: ⬡⌬⏣
+# node
+set -g glyph_nodejs_logo '⬡ ' # Alternatives: ⬡⌬⏣⬢
 
-set -g glyph_vagrant_logo '🇻' # Alternatives: ᴠ▿▾ⅤⅴṿṾＶ𝐕𝕍𝕧𝘃Ⓥⓥ🅅🅥🆅🇻
-# Skipping `vagrant status` because it is extremly slow
-# set -g glyph_vagrant_running '↑'
-# set -g glyph_vagrant_poweroff '↓'
-# set -g glyph_vagrant_aborted '✕'
-# set -g glyph_vagrant_saved '⇡'
-# set -g glyph_vagrant_stopping '⇣'
-# set -g glyph_vagrant_unknown '!'
-
+# vagrant
+set -g glyph_vagrant_logo '🅅' # Alternatives: ᴠ▿▾ⅤⅴṿṾＶ𝐕𝕍𝕧𝘃Ⓥⓥ🅅🅥🆅🇻
 
 function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     # Requires to be set before any other set calls
