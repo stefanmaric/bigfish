@@ -54,7 +54,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     if command -v node > /dev/null; and lookup package.json > /dev/null
         set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
         set leftPrompt (bf_concat_segments $leftPrompt \
-            (node --version | sed "s/v/$glyph_nodejs_logo/") cyan normal)
+            (node --version | sed "s/v/$glyph_nodejs_logo/") brgreen normal)
     end
 
     # vagrant
