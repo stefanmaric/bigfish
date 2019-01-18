@@ -10,7 +10,7 @@ I was tired of issues with patched fonts like [Powerline](https://github.com/pow
 
 ## Install
 
-Use [fisherman](http://fisherman.sh/):
+Use [fisher](https://github.com/jorgebucaran/fisher):
 
 ```shell
 fisher install stefanmaric/bigfish
