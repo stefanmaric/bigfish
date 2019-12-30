@@ -13,7 +13,7 @@ I was tired of issues with patched fonts like [Powerline](https://github.com/pow
 Use [fisher](https://github.com/jorgebucaran/fisher):
 
 ```shell
-fisher install stefanmaric/bigfish
+fisher add stefanmaric/bigfish
 ```
 
 If you are interested in manual installation, please open an issue asking for help and I will give you instructions and then update this README.
