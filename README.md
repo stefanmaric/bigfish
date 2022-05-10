@@ -35,7 +35,6 @@ If you are interested in manual installation, please open an issue asking for he
   * There are changes not ready for commit (dirty state) (\*).
   * There are new untracked files (…).
 * Nodejs version (⬡) in `cyan` if there's a `package.json` file around.
-* Vagrant glyph (🇻) in `purple` if you can run `vagrant` commands.
 
 
 * Last command duration.

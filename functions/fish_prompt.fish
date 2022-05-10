@@ -20,9 +20,6 @@ set -g glyph_superpower '⌁' # Alternatives: 🗲⚡⌁ϟ
 # node
 set -g glyph_nodejs_logo '⬡ ' # Alternatives: ⬡⌬⏣⬢
 
-# vagrant
-set -g glyph_vagrant_logo '🅅' # Alternatives: ᴠ▿▾ⅤⅴṿṾＶ𝐕𝕍𝕧𝘃Ⓥⓥ🅅🅥🆅🇻
-
 function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     # Requires to be set before any other set calls
     set -l last_status $status
@@ -55,12 +52,6 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
         set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
         set leftPrompt (bf_concat_segments $leftPrompt \
             (node --version | sed "s/v/$glyph_nodejs_logo/") brgreen normal)
-    end
-
-    # vagrant
-    if lookup Vagrantfile > /dev/null
-        set leftPrompt (bf_concat_segments $leftPrompt ' ╱ ' grey normal)
-        set leftPrompt (bf_concat_segments $leftPrompt $glyph_vagrant_logo purple normal)
     end
 
     # Assemble the right prompt
