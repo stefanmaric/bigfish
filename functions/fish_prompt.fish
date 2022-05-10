@@ -66,8 +66,7 @@ function fish_prompt --description 'bigfish: A long two-lines fish prompt'
     # Assemble the right prompt
 
     # Last command duration
-    set rightPrompt (bf_concat_segments $rightPrompt \
-        (echo $CMD_DURATION | humanize_duration) grey normal true)
+    set rightPrompt (bf_concat_segments $rightPrompt (humantime $CMD_DURATION) grey normal true)
     set rightPrompt (bf_concat_segments $rightPrompt ' ╱ ' grey normal)
     # When did the last command finish
     set rightPrompt (bf_concat_segments $rightPrompt (date '+%T') grey normal)
